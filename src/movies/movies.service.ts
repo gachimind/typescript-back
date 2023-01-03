@@ -12,7 +12,4 @@ export class MoviesService {
           ...movieData,
         });
       }
-     getAll(): Movie[] {
-        return this.movies;
-      }
 }
