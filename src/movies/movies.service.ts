@@ -6,6 +6,13 @@ import { CreateMovieDto } from './dto/create-movie.dto';
 export class MoviesService {
   private movies: Movie[] = [];
 
+  create(movieData: CreateMovieDto) {
+    this.movies.push({
+      id: this.movies.length + 1,
+      ...movieData,
+    });
+  }
+
   getOne(id: number): Movie {
     const movie = this.movies.find((movie) => movie.id === id);
     if (!movie) {

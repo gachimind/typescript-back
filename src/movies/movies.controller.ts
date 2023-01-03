@@ -6,9 +6,15 @@ import { MoviesService } from './movies.service';
 @Controller('api')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
+
   @Get()
   getAll() {
     return this.moviesService.getAll();
+  }
+
+@Post()
+  create(@Body() movieData: CreateMovieDto) {
+    return this.moviesService.create(movieData);
   }
 
   @Get(':id')
