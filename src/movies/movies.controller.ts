@@ -10,10 +10,7 @@ export class MoviesController {
   getOne(@Param('id') movieId: number) {
     return this.moviesService.getOne(movieId);
   }
-  @Post()
-  create(@Body() movieData: CreateMovieDto) {
-    return this.moviesService.create(movieData);
-  }
+
   @Delete(':id')
   deleteOne(@Param('id') movieId: number) {
     return this.moviesService.deleteOne(movieId);

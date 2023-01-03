@@ -11,13 +11,7 @@ export class MoviesService {
     if (!movie) {
       throw new NotFoundException(`${id}번 영화 ID를 찾을 수 없습니다.`);
     }
-  }
-
-  create(movieData: CreateMovieDto) {
-    this.movies.push({
-      id: this.movies.length + 1,
-      ...movieData,
-    });
+    return movie;
   }
 
   deleteOne(id: number) {
