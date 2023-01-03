@@ -25,4 +25,8 @@ export class MoviesService {
     this.getOne(id);
     this.movies = this.movies.filter((movie) => movie.id !== id);
   }
+
+  getAll(): Movie[] {
+    return this.movies;
+  }
 }
