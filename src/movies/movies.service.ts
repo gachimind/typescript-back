@@ -4,12 +4,12 @@ import { Movie } from './entities/movie.entities';
 
 @Injectable()
 export class MoviesService {
-    private movies: Movie[] = [];
-    
-    create(movieData) {
-        this.movies.push({
-          id: this.movies.length + 1,
-          ...movieData,
-        });
-      }
+  private movies: Movie[] = [];
+
+  create(movieData: CreateMovieDto) {
+    this.movies.push({
+      id: this.movies.length + 1,
+      ...movieData,
+    });
+  }
 }
