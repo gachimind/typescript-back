@@ -6,8 +6,4 @@ import { MoviesService } from './movies.service';
 @Controller('api')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
-  @Get()
-  getAll() {
-    return 'all movies';
-  }
 }
