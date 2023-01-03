@@ -6,6 +6,15 @@ import { MoviesService } from './movies.service';
 @Controller('api')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
+  @Get(':id')
+  getOne(@Param('id') movieId: number) {
+    return this.moviesService.getOne(movieId);
+  }
+
+  @Delete(':id')
+  deleteOne(@Param('id') movieId: number) {
+    return this.moviesService.deleteOne(movieId);
+  }
   @Get()
   getAll() {
     return 'all movies';
