@@ -19,8 +19,6 @@ export class MoviesService {
     this.movies = this.movies.filter((movie) => movie.id !== id);
   }
 
-  private movies: Movie[] = [];
-
   getAll(): Movie[] {
     return this.movies;
   }
