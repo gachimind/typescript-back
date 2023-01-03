@@ -6,6 +6,11 @@ import { MoviesService } from './movies.service';
 @Controller('api')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
+  @Get()
+  getAll() {
+    return this.moviesService.getAll();
+  }
+
   @Get(':id')
   getOne(@Param('id') movieId: number) {
     return this.moviesService.getOne(movieId);
@@ -15,9 +20,4 @@ export class MoviesController {
   deleteOne(@Param('id') movieId: number) {
     return this.moviesService.deleteOne(movieId);
   }
-  @Get()
-  getAll() {
-    return 'all movies';
-  }
 }
-// 삭제 예정
