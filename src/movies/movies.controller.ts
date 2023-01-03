@@ -15,6 +15,7 @@ export class MoviesController {
   deleteOne(@Param('id') movieId: number) {
     return this.moviesService.deleteOne(movieId);
   }
+
   @Get()
   getAll() {
     return 'all movies';
