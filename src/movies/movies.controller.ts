@@ -6,8 +6,18 @@ import { MoviesService } from './movies.service';
 @Controller('api')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
+
   @Post()
   create(@Body() movieData: CreateMovieDto) {
     return this.moviesService.create(movieData);
+  }
+  @Get(':id')
+  getOne(@Param('id') movieId: number) {
+    return this.moviesService.getOne(movieId);
+  }
+
+  @Delete(':id')
+  deleteOne(@Param('id') movieId: number) {
+    return this.moviesService.deleteOne(movieId);
   }
 }
